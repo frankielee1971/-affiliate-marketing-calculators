@@ -1,0 +1,251 @@
+
+<!-- saved from url=(0096)file:///C:/Users/frank/OneDrive/Apps/DigitallyDefined%20affiliate%20marketing%20calculators.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><!--<base href="https://websim.ai/build-saas?project=DigitallyDefined&amp;features=ROI-Calculator,Conversion-Calculator,AI-Content-Generator,SEO-Tools,Marketing-Automation,Analytics-Dashboard,Training-Hub,Gamification,Customizable-UX,Subscription-Packages,Community-Engagement&amp;tech-stack=React,Node.js,Python,OpenAI-API,D3.js,Stripe&amp;integration=HubSpot,Zoom,Discourse%20using%20the%20colors%20from%20the%20image%20uploaded">--><base href=".">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DigitallyDefined - Affiliate Marketing Calculators</title>
+<style>
+    :root {
+        --primary-color: #ff6600;
+        --secondary-color: #00a3cc;
+        --background-color: #f0f8ff;
+        --text-color: #333;
+        --card-bg: #ffffff;
+    }
+    body, html {
+        margin: 0;
+        padding: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: var(--background-color);
+        color: var(--text-color);
+        line-height: 1.6;
+    }
+    .header {
+        background-color: var(--primary-color);
+        color: white;
+        text-align: center;
+        padding: 1rem;
+    }
+    .header img {
+        max-width: 100%;
+        height: auto;
+    }
+    .content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 20px;
+    }
+    h1, h2, h3 {
+        color: var(--primary-color);
+    }
+    .calculator-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        margin-top: 30px;
+    }
+    .calculator {
+        background-color: var(--card-bg);
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    .input-group {
+        margin-bottom: 15px;
+    }
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+    input[type="number"] {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+    button {
+        background-color: var(--secondary-color);
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        font-size: 14px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    button:hover {
+        background-color: #0086a8;
+    }
+    .result {
+        margin-top: 15px;
+        font-weight: bold;
+        font-size: 16px;
+    }
+</style>
+</head>
+<body>
+    <header class="header">
+        <img src="./calculators_files/6a34173f-4fe8-4722-b29b-b273177a4871" alt="DigitallyDefined banner">
+    </header>
+    
+    <div class="content">
+        <h1>Affiliate Marketing Calculators</h1>
+        <p>Use these calculators to optimize your affiliate marketing strategies and maximize your earnings.</p>
+        
+        <div class="calculator-grid">
+            <div class="calculator">
+                <h3>ROI Calculator</h3>
+                <div class="input-group">
+                    <label for="roi-investment">Initial Investment ($)</label>
+                    <input type="number" id="roi-investment" placeholder="Enter investment">
+                </div>
+                <div class="input-group">
+                    <label for="roi-revenue">Expected Revenue ($)</label>
+                    <input type="number" id="roi-revenue" placeholder="Enter revenue">
+                </div>
+                <button onclick="calculateROI()">Calculate ROI</button>
+                <div id="roi-result" class="result"></div>
+            </div>
+
+            <div class="calculator">
+                <h3>Conversion Rate Calculator</h3>
+                <div class="input-group">
+                    <label for="cr-visitors">Number of Visitors</label>
+                    <input type="number" id="cr-visitors" placeholder="Enter visitors">
+                </div>
+                <div class="input-group">
+                    <label for="cr-conversions">Number of Conversions</label>
+                    <input type="number" id="cr-conversions" placeholder="Enter conversions">
+                </div>
+                <button onclick="calculateConversionRate()">Calculate Rate</button>
+                <div id="cr-result" class="result"></div>
+            </div>
+
+            <div class="calculator">
+                <h3>EPC (Earnings Per Click) Calculator</h3>
+                <div class="input-group">
+                    <label for="epc-earnings">Total Earnings ($)</label>
+                    <input type="number" id="epc-earnings" placeholder="Enter earnings">
+                </div>
+                <div class="input-group">
+                    <label for="epc-clicks">Number of Clicks</label>
+                    <input type="number" id="epc-clicks" placeholder="Enter clicks">
+                </div>
+                <button onclick="calculateEPC()">Calculate EPC</button>
+                <div id="epc-result" class="result"></div>
+            </div>
+
+            <div class="calculator">
+                <h3>Affiliate Commission Calculator</h3>
+                <div class="input-group">
+                    <label for="comm-sale">Sale Amount ($)</label>
+                    <input type="number" id="comm-sale" placeholder="Enter sale amount">
+                </div>
+                <div class="input-group">
+                    <label for="comm-rate">Commission Rate (%)</label>
+                    <input type="number" id="comm-rate" placeholder="Enter commission rate">
+                </div>
+                <button onclick="calculateCommission()">Calculate Commission</button>
+                <div id="comm-result" class="result"></div>
+            </div>
+
+            <div class="calculator">
+                <h3>Click-Through Rate (CTR) Calculator</h3>
+                <div class="input-group">
+                    <label for="ctr-impressions">Number of Impressions</label>
+                    <input type="number" id="ctr-impressions" placeholder="Enter impressions">
+                </div>
+                <div class="input-group">
+                    <label for="ctr-clicks">Number of Clicks</label>
+                    <input type="number" id="ctr-clicks" placeholder="Enter clicks">
+                </div>
+                <button onclick="calculateCTR()">Calculate CTR</button>
+                <div id="ctr-result" class="result"></div>
+            </div>
+
+            <div class="calculator">
+                <h3>Average Order Value (AOV) Calculator</h3>
+                <div class="input-group">
+                    <label for="aov-revenue">Total Revenue ($)</label>
+                    <input type="number" id="aov-revenue" placeholder="Enter total revenue">
+                </div>
+                <div class="input-group">
+                    <label for="aov-orders">Number of Orders</label>
+                    <input type="number" id="aov-orders" placeholder="Enter number of orders">
+                </div>
+                <button onclick="calculateAOV()">Calculate AOV</button>
+                <div id="aov-result" class="result"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    function calculateROI() {
+        const investment = parseFloat(document.getElementById('roi-investment').value);
+        const revenue = parseFloat(document.getElementById('roi-revenue').value);
+        if (isNaN(investment) || isNaN(revenue)) {
+            alert('Please enter valid numbers.');
+            return;
+        }
+        const roi = ((revenue - investment) / investment) * 100;
+        document.getElementById('roi-result').innerHTML = `ROI: ${roi.toFixed(2)}%`;
+    }
+
+    function calculateConversionRate() {
+        const visitors = parseFloat(document.getElementById('cr-visitors').value);
+        const conversions = parseFloat(document.getElementById('cr-conversions').value);
+        if (isNaN(visitors) || isNaN(conversions)) {
+            alert('Please enter valid numbers.');
+            return;
+        }
+        const rate = (conversions / visitors) * 100;
+        document.getElementById('cr-result').innerHTML = `Conversion Rate: ${rate.toFixed(2)}%`;
+    }
+
+    function calculateEPC() {
+        const earnings = parseFloat(document.getElementById('epc-earnings').value);
+        const clicks = parseFloat(document.getElementById('epc-clicks').value);
+        if (isNaN(earnings) || isNaN(clicks)) {
+            alert('Please enter valid numbers.');
+            return;
+        }
+        const epc = earnings / clicks;
+        document.getElementById('epc-result').innerHTML = `EPC: $${epc.toFixed(2)}`;
+    }
+
+    function calculateCommission() {
+        const sale = parseFloat(document.getElementById('comm-sale').value);
+        const rate = parseFloat(document.getElementById('comm-rate').value);
+        if (isNaN(sale) || isNaN(rate)) {
+            alert('Please enter valid numbers.');
+            return;
+        }
+        const commission = sale * (rate / 100);
+        document.getElementById('comm-result').innerHTML = `Commission: $${commission.toFixed(2)}`;
+    }
+
+    function calculateCTR() {
+        const impressions = parseFloat(document.getElementById('ctr-impressions').value);
+        const clicks = parseFloat(document.getElementById('ctr-clicks').value);
+        if (isNaN(impressions) || isNaN(clicks)) {
+            alert('Please enter valid numbers.');
+            return;
+        }
+        const ctr = (clicks / impressions) * 100;
+        document.getElementById('ctr-result').innerHTML = `CTR: ${ctr.toFixed(2)}%`;
+    }
+
+    function calculateAOV() {
+        const revenue = parseFloat(document.getElementById('aov-revenue').value);
+        const orders = parseFloat(document.getElementById('aov-orders').value);
+        if (isNaN(revenue) || isNaN(orders)) {
+            alert('Please enter valid numbers.');
+            return;
+        }
+        const aov = revenue / orders;
+        document.getElementById('aov-result').innerHTML = `AOV: $${aov.toFixed(2)}`;
+    }
+    </script>
+
+</body></html>
